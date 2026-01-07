@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://bykcbyj8pwcae"]
+
+[ext_resource type="Script" uid="uid://df5gaiuc2p45v" path="res://entities/EfficiencyTester/EfficiencyTester_scn_main.gd" id="1_mbvhq"]
+
+[node name="EfficiencyTester" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mbvhq")
+
+[node name="NobodyWhoModel" type="NobodyWhoModel" parent="."]
+
+[node name="NobodyWhoChat" type="NobodyWhoChat" parent="." node_paths=PackedStringArray("model_node")]
+model_node = NodePath("../NobodyWhoModel")
+system_prompt = "Calculate each query. Output the result, and nothing else, 20 times on the same line."
+
+[connection signal="response_finished" from="NobodyWhoChat" to="." method="_on_nobody_who_chat_response_finished"]

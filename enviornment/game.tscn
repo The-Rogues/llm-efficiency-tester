@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://jjmo31qbiyof"]
+
+[ext_resource type="PackedScene" uid="uid://bykcbyj8pwcae" path="res://entities/EfficiencyTester/EfficiencyTester.tscn" id="1_7vkls"]
+
+[node name="Game" type="Node2D"]
+
+[node name="EfficiencyTester" parent="." instance=ExtResource("1_7vkls")]
+slf_out_file = "out"
+slf_gguf_path = "res://mistral-7b-instruct-v0.2.Q4_K_M.gguf"
